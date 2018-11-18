@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p id="demo"></p>
+
+    <script>
+      var parameters = location.search.substring(1).split("&");
+      var temp = parameters[0];
+      document.getElementById("demo").innerHTML = temp;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>New Contact</title>
+    <link rel="stylesheet" href="addressBook.css">
+    <style media="screen">
+      p {
+        font-size: 15px;
+        margin: 0px;
+      }
+      form {
+        width: 350px;
+        padding-left: 38%;
+      }
+      h2 {
+        text-align: center;
+      }
+    </style>
+    <script type="text/javascript">
+
+    var key = 0;
+    var numberOfPhoneNumbers = 0;
+    var numberOfAddresses = 0;
+    var numberOfEmails = 0;
+    var phoneNumbers = [];
+    var addresses = [];
+    var emails = [];
+
+    function validateForm() {
+      var x = document.forms["newContact"]["firstName"].value;
+      var y = document.forms["newContact"]["lastName"].value;
+      if (x == "" && y == "") {
+        alert("Please provide either a first or last name.");
+        return false;
+
+      }
+
+      //Set the values of each numberOf inputs
+      document.getElementById("numberOfPhoneNumbers").value = "" + numberOfPhoneNumbers;
+      document.getElementById("numberOfAddresses").value = "" + numberOfAddresses;
+      document.getElementById("numberOfEmails").value = "" + numberOfEmails;
+
+    }
+
+    function addPhone() {
+      numberOfPhoneNumbers++;
+      var element = '<div id="' + key + '"style="margin:0px; padding:0px; display: block;"><br>Phone #' + numberOfPhoneNumbers + '<br><label for="countryCode">Country code: </label><input style="width: 15px;" type="number" name="countryCode' + numberOfPhoneNumbers + '" value="1"> <br><label for="areaCode">Area code: </label> <input type="number" name="areaCode' + numberOfPhoneNumbers + '" value=""> <br><label for="phoneNumber">Phone number: </label> <input type="number" name="phoneNumber' + numberOfPhoneNumbers + '" value=""> <br><input type="radio" name="telephone_type' + numberOfPhoneNumbers + '" value="home"> Home<input type="radio" name="telephone_type' + numberOfPhoneNumbers + '" value="cell"> Cell<input type="radio" name="telephone_type' + numberOfPhoneNumbers + '" value="work"> Work<input type="button" name="" value="Remove" onclick="removeTelephone(' + (key++) + ')"> <br></div>';
+      document.getElementById('phones').innerHTML += element;
+      console.log(numberOfPhoneNumbers);
+      phoneNumbers.push(key);
+    }
+
+    function addAddress() {
+      numberOfAddresses++;
+      var element = '<div id="' + key + '" style="margin:0px; padding:0px; display: block;"><br>Address #' + numberOfAddresses + '<br> Country:<input type="text" name="country' + numberOfAddresses + '" value=""><br> State:<input type="text" name="state' + numberOfAddresses + '" value=""><br> Postal Code:<input type="text" name="postalCode' + numberOfAddresses + '" value=""><br> Street Address:<input type="text" name="streetAddress' + numberOfAddresses + '" value=""><br> Apartment (if any):<input type="text" name="apartment' + numberOfAddresses + '" value=""> <br> <input type="radio" name="address_type' + numberOfAddresses + '" value="home"> Home<input type="radio" name="address_type' + numberOfAddresses + '" value="work"> Work <input type="button" name="" value="Remove" onclick="removeAddress(' + (key++) + ')"> <br></div>'
+      document.getElementById('addresses').innerHTML += element;
+      console.log(numberOfAddresses);
+      addresses.push(key);
+    }
+
+    function addEmail() {
+      numberOfEmails++;
+      var element = '<div id="' + key + '" style="margin:0px; padding:0px; display: block;"><br>Email #' + numberOfEmails + '<br> Email address: <br><input type="text" name="email' + numberOfEmails + '" value=""> <br><input type="radio" name="email_type' + numberOfEmails + '" value="work"> Work<input type="radio" name="email_type' + numberOfEmails + '" value="personal"> Personal<input type="button" name="remove' + numberOfEmails + '" value="Remove" onclick="removeEmail(' + (key++) +')"></div>'
+      document.getElementById('emails').innerHTML += element;
+      console.log(numberOfEmails);
+      emails.push(key);
+    }
+
+    function removeTelephone(element) {
+      document.getElementById(element).remove();
+      numberOfPhoneNumbers--;
+      console.log(numberOfPhoneNumbers);
+    }
+    function removeAddress(element) {
+      document.getElementById(element).remove();
+      numberOfAddresses--;
+      console.log(numberOfAddresses);
+    }
+    function removeEmail(element) {
+      document.getElementById(element).remove();
+      numberOfEmails--;
+      console.log(numberOfEmails);
+    }
+
+    </script>
+  </head>
+  <body>
+
+    <h2>Create a new contact</h2>
+
+    <form name="newContact" action="./newContact.php" onsubmit="return validateForm()" method="post">
+      First name: <br>
+      <input type="text" name="firstName" value=""> <br>
+      Middle name: <br>
+      <input type="text" name="middleName" value=""> <br>
+      Last name: <br>
+      <input type="text" name="lastName" value=""> <br>
+      <br>
+      Relationship: <br>
+      <input type="radio" name="relationship" value="friend"> Friend
+      <input type="radio" name="relationship" value="co-worker"> Co-worker
+      <input type="radio" name="relationship" value="family"> Family
+      <input type="radio" name="relationship" value="spouse"> Spouse
+      <br><br>
+
+      Birthday: <br>
+      <input type="date" name="birthday" value="1990-01-01">
+
+      <br><br>
+
+      Add a picture url: <br>
+      <input type="text" name="image" value="">
+
+      <div id="phones" style="width: 200px; padding-left: 0%;">
+
+      </div>
+
+      <div id="addresses" style="width: 150px; padding-left: 0%;">
+
+      </div>
+
+      <div id="emails" style="width: 150px; padding-left: 0%;">
+
+      </div>
+
+      <br>
+      <input type="button" value="Add a phone number" onclick="addPhone();" />
+      <input type="button" value="Add an address" onclick="addAddress();" />
+      <input type="button" value="Add an email" onclick="addEmail();" />
+
+      <input id="numberOfPhoneNumbers" type="hidden" name="numberOfPhoneNumbers" value=''>
+      <input id="numberOfAddresses" type="hidden" name="numberOfAddresses" value=''>
+      <input id="numberOfEmails" type="hidden" name="numberOfEmails" value=''>
+
+      <blockquote style="text-align:center">
+          <i><input type="submit" value="Create contact"></i>
+      </blockquote>
+    </form>
+
+  </body>
+</html>

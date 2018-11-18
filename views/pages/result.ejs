@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculation Result</title>
+<style media="screen">
+body {
+  font-family: helvetica;
+}
+
+h1, p {
+  text-align: center;
+}
+
+blockquote {
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<h1>Calculation Result</h1>
+<p>The price to ship your <%= oz %> oz <%= shipmentType %> is $<%= dollars %>.<%= cents %></p>
+<h1>Enter a different Package</h1>
+<blockquote>
+  <form class="" action="/calculatePostage" method="get">
+    Weight (oz): <input type="number" min="0" step="0.1"`` name="oz" value="0"> <br>
+    Mail type: <select class="shipmentType" name="shipmentType">
+      <option value="letter_stamped">Letter (stamped)</option>
+      <option value="letter_metered">Letter (metered)</option>
+      <option value="large_envelope">Large Envelope</option>
+      <option value="first_class_package">First-Class Package</option>
+    </select> <br>
+    <input type="submit" name="submit" value="Submit">
+  </form>
+</blockquote>
+</body>
+</html>

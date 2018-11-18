@@ -1,0 +1,33 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application:
+
+https://blooming-bastion-52002.herokuapp.com/
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+
+https://github.com/nathan-tagg/cs313-php.git
+
+3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+
+As of right now we have basic read and write functionality in place. Login is still not necessary but will be a stretch challenge for next week.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+
+I still need to implement the individual contact page, witch will contain the
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+
+I learned a lot about how to intermingle html and javascript to mimic inputing data into a database conventionally. I think it is was cool translating the updates to
+
+6. What is a benefit of having a foreign key constraint?
+
+It allows us to form relationships between tables.
+
+7. Please select the category you feel best describes your assignment:
+
+E - Shows creativity and excels above and beyond requirements
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+
+I spent over 12 hours on this project. I learned a lot and struggled throughout each step on my own. I put time into making the styling more attractive and making it so that the functionality of the database I designed would match well with the web page.

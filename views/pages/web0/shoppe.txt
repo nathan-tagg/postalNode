@@ -1,0 +1,33 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application:
+
+https://blooming-bastion-52002.herokuapp.com/
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+
+https://github.com/nathan-tagg/cs313-php.git
+
+3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+
+Store page, Shopping cart page, saving the shopping cart, all other requirements.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+
+I am having trouble with getting the cookie to update without refreshing the page.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+
+I learned how to use cookies all over the place!
+
+6. List one strength and one limitation of using cookies.
+
+Cookies are great but they can be tedious. they are saved on the client, so we can't iterate quickly through them on the server. They are lightweight and can be a solution to not have to use certain things in a database.
+
+7. Please select the category you feel best describes your assignment:
+
+E - Shows creativity and excels above and beyond requirements
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+
+I added some cool features and learned a lot during this assignment.
